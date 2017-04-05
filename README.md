@@ -1,10 +1,8 @@
-# Universal asynchronous Javascript transport for statistic data
+# Отправка статистики на сервер
 
 Универсальный транспорт для отправки различных статистических данных на сервер.
 
 Всегда используется POST!
-
-Предназначен для отправки больших данных.
 
 По приоритету вызываются:
 - navigator.sendBeacon
@@ -22,8 +20,8 @@
 ```html
 <script src="node_modules/lib/index.js"></script>
 <script>
-    var data = { name: 'мос' };
-    send2server('https://www.tutu.ru/station/suggest.php', data);
+    var data = { foo: 123 };
+    send2server('https://some.url', data);
 </script>
 ```
 
