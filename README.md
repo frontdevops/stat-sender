@@ -32,7 +32,7 @@
 require('../../lib/index');
 
 // Доступен в глобальном скопе
-send2server('https://www.tutu.ru/station/suggest.php', data);
+send2server('https://.....', data);
 ```
 
 💂
