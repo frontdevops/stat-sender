@@ -1,0 +1,59 @@
+{
+  "name": "stat-sender",
+  "version": "1.2.2",
+  "description": "Universal asynchronous Javascript transport for different statistics",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "build": "./node_modules/uglify-js/bin/uglifyjs --compress --mangle -o lib/index.js src/index.js",
+    "test": "ava 'test/**/*.test.js'",
+    "lint": "esw lib/ test/",
+    "test:watch": "npm run test -- --watch",
+    "lint:watch": "npm run lint -- --watch",
+    "cover": "nyc npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "pub": "npm run lint && npm run cover && npm publish"
+  },
+  "files": [
+    "lib",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontdevops/stat-sender.git"
+  },
+  "keywords": [],
+  "author": "Alexander Mayorov <mayorov@tutu.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frontdevops/stat-sender/issues"
+  },
+  "homepage": "https://github.com/frontdevops/stat-sender#readme",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-register": "^6.24.0",
+    "coveralls": "^2.12.0",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "eslint-watch": "^3.0.1",
+    "nyc": "^10.1.2",
+    "sinon": "^2.1.0",
+    "uglify-js": "^2.8.21"
+  },
+  "dependencies": {
+    "form-data": "^2.1.2"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
+}
